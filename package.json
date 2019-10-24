@@ -1,0 +1,12 @@
+{
+  "name": "projet",
+  "version": "0.1.0",
+  "description": "Projet discord BenBBot",
+  "main": "main.js",
+  "repository": "https://github.com/Lycus-974/BenBBot.git",
+  "author": "Lycus-974 <lycus974@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
