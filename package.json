@@ -7,7 +7,9 @@
   "author": "Lycus-974 <lycus974@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "discordjs/discord.js"
+    "discord.js": "discordjs/discord.js",
+    "mongoose": "^5.7.7",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
@@ -15,8 +17,6 @@
   },
   "eslintConfig": {
     "extends": "aqua/node",
-    "rules": {
-      
-    }
+    "rules": {}
   }
 }

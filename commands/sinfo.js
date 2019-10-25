@@ -1,6 +1,6 @@
 const { MessageEmbed} = require('discord.js');
 
-module.exports = (client,message) => {
+exports.run = (client,message) => {
     const embed = new MessageEmbed()
         .setDescription(message.guild.name)
         .setThumbnail(message.guild.iconURL())
@@ -9,4 +9,8 @@ module.exports = (client,message) => {
         .setImage(message.guild.owner.user.avatarURL())
         .setTimestamp();
     message.channel.send(embed);
+};
+
+exports.help = {
+    name: "sinfo"
 };

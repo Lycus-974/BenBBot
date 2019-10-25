@@ -1,4 +1,4 @@
-module.exports = (client,message,args) => {
+exports.run = (client,message,args) => {
     const role = message.guild.roles.find(r => r.name === args[0]);
     if (!role) return message.channel.send("Ce role n'existe pas !"); //Si le role n'existe pas sur le serveur
     if (message.member.roles.find(r => r.name ===args[0])) {           // si le role est déjà présent sur l'utilisateur
@@ -8,4 +8,8 @@ module.exports = (client,message,args) => {
       message.member.roles.add(role);
       message.channel.send(`${message.author} possede à présent le role ${role} !`);
     }
+};
+
+exports.help = {
+  name: "role"
 };
