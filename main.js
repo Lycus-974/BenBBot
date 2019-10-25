@@ -17,12 +17,18 @@ fs.readdir("./commands/", (err, files) => {
         console.log(`Commande ${cmdName} chargée`);
         client.commands.set(cmdName, props);
     })
-})
+});
 
-client.on("ready", () => require("./events/ready.js")(client));
-client.on("message", msg => require("./events/message.js")(client,msg));
-client.on("guildMemberAdd", member => require("./events/guildMemberAdd.js")(client,member));
-client.on("guildCreate", guild => require("./events/guildCreate.js")(client,guild));
+fs.readdir("./events/", (err, files) => {
+    if (err) return console.error;
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return undefined;
+        const event = require(`./events/${file}`);
+        const eventName = file.split(".")[0];
+        console.log(`Evenement ${eventName} chargé`);
+        client.on(eventName, event.bind(null,client));
+    })
+});
 
 client.mongoose.init();
 client.login(TOKEN);
